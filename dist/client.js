@@ -187,11 +187,16 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (context) {
-    if(context.element.messageRef && context.element.messageRef.name){
-        console.log(`Message found: ${context.element.messageRef.name}`);
-        context.result.messages.push(context.element.messageRef.name);
+    if(context.element.eventDefinitions && context.element.eventDefinitions[0].messageRef){
+        console.log(`Message found: ${context.element.eventDefinitions[0].messageRef.name}`);
+        const messageName = context.element.eventDefinitions[0].messageRef.name
+        if(!context.result.messages.includes(messageName)){
+        context.result.messages.push(messageName);
+        }
     }
 });
+
+//context.element.messageRef && context.element.messageRef.name
 
 /***/ }),
 
