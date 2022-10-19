@@ -8,9 +8,10 @@
  */
 import MessageHandler from './messageHandler.js';
 import SignalHandler from './signalHandler.js';
+import BpmnErrorHandler from './bpmnErrorHandler.js';
 
 const handlers = [
-  MessageHandler, SignalHandler
+  MessageHandler, SignalHandler, BpmnErrorHandler
 ]
 
 export default function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling) {
@@ -28,6 +29,7 @@ export default function ExampleBpmnJsExtension(elementRegistry, editorActions, c
     const result = {
       messages: [],
       signals:[],
+      bpmnErrorCodes:[],
       
     };
     var elements = elementRegistry._elements;
