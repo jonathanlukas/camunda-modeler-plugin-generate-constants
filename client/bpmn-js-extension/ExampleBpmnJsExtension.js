@@ -20,7 +20,7 @@ export default function ExampleBpmnJsExtension(elementRegistry, editorActions, c
       parse();
     },
     "generateConstants:python": function() {
-      console.log("yeah!!");
+      parse();
     }
   });
 
