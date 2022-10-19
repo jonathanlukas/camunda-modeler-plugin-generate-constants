@@ -7,9 +7,10 @@
  * https://github.com/bpmn-io/bpmn-js-examples
  */
 import MessageHandler from './messageHandler.js';
+import SignalHandler from './signalHandler.js';
 
 const handlers = [
-  MessageHandler
+  MessageHandler, SignalHandler
 ]
 
 export default function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling) {
@@ -19,13 +20,14 @@ export default function ExampleBpmnJsExtension(elementRegistry, editorActions, c
       parse();
     },
     "generateConstants:python": function() {
-      console.log("yeah!!");
+      parse();
     }
   });
 
   const parse = () => {
     const result = {
       messages: [],
+      signals:[],
       
     };
     var elements = elementRegistry._elements;
