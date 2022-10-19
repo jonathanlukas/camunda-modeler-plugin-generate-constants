@@ -6,8 +6,8 @@ A Camunda Modeler plugin that helps you to bind your implementation to a BPMN di
 
 These constants are or will be supported:
 
-- [ ] Message
-- [ ] Signal
+- [x] Message
+- [x] Signal
 - [ ] BPMN Error
 - [ ] Task Type (C8)
 - [ ] Task Topic (C7)
