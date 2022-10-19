@@ -120,7 +120,7 @@ function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling
       parse();
     },
     "generateConstants:python": function() {
-      console.log("yeah!!");
+      parse();
     }
   });
 
