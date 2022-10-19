@@ -97,6 +97,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ExampleBpmnJsExtension; });
 /* harmony import */ var _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./messageHandler.js */ "./client/bpmn-js-extension/messageHandler.js");
+/* harmony import */ var _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signalHandler.js */ "./client/bpmn-js-extension/signalHandler.js");
 /**
  * A bpmn-js service that provides the actual plug-in feature.
  *
@@ -107,8 +108,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+
 const handlers = [
-  _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__["default"]
+  _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__["default"], _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__["default"]
 ]
 
 function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling) {
@@ -125,6 +127,7 @@ function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling
   const parse = () => {
     const result = {
       messages: [],
+      signals:[],
       
     };
     var elements = elementRegistry._elements;
@@ -197,6 +200,28 @@ __webpack_require__.r(__webpack_exports__);
 });
 
 //context.element.messageRef && context.element.messageRef.name
+
+/***/ }),
+
+/***/ "./client/bpmn-js-extension/signalHandler.js":
+/*!***************************************************!*\
+  !*** ./client/bpmn-js-extension/signalHandler.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function (context) {
+    console.log("SignalHandler");
+    if(context.element.eventDefinitions && context.element.eventDefinitions[0].signalRef){
+        const signalName = context.element.eventDefinitions[0].signalRef.name
+        console.log(`Signal found: ${signalName}`);
+        if(!context.result.signals.includes(signalName)){
+        context.result.signals.push(signalName);
+        }
+    }
+});
 
 /***/ }),
 
