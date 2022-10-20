@@ -16,5 +16,3 @@ export default function (context) {
     }
   }
 }
-
-//context.element.messageRef && context.element.messageRef.name
