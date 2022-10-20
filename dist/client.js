@@ -98,6 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ExampleBpmnJsExtension; });
 /* harmony import */ var _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./messageHandler.js */ "./client/bpmn-js-extension/messageHandler.js");
 /* harmony import */ var _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signalHandler.js */ "./client/bpmn-js-extension/signalHandler.js");
+/* harmony import */ var _bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bpmnErrorHandler.js */ "./client/bpmn-js-extension/bpmnErrorHandler.js");
 /**
  * A bpmn-js service that provides the actual plug-in feature.
  *
@@ -109,8 +110,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const handlers = [
-  _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__["default"], _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__["default"]
+  _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__["default"], _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__["default"], _bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__["default"]
 ]
 
 function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling) {
@@ -128,6 +130,7 @@ function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling
     const result = {
       messages: [],
       signals:[],
+      bpmnErrorCodes:[],
       
     };
     var elements = elementRegistry._elements;
@@ -144,6 +147,27 @@ function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling
 }
 
 ExampleBpmnJsExtension.$inject = [ 'elementRegistry', 'editorActions', 'canvas', 'modeling' ];
+
+/***/ }),
+
+/***/ "./client/bpmn-js-extension/bpmnErrorHandler.js":
+/*!******************************************************!*\
+  !*** ./client/bpmn-js-extension/bpmnErrorHandler.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function (context) {
+    if(context.element.eventDefinitions && context.element.eventDefinitions[0].errorRef){
+        const bpmnErrorCode = context.element.eventDefinitions[0].errorRef.errorCode;
+        console.log(`BPMN Error found: ${bpmnErrorCode}`);        
+        if(!context.result.bpmnErrorCodes.includes(bpmnErrorCode)){
+        context.result.bpmnErrorCodes.push(bpmnErrorCode);
+        }
+    }
+});
 
 /***/ }),
 
@@ -191,8 +215,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (context) {
     if(context.element.eventDefinitions && context.element.eventDefinitions[0].messageRef){
-        console.log(`Message found: ${context.element.eventDefinitions[0].messageRef.name}`);
         const messageName = context.element.eventDefinitions[0].messageRef.name
+        console.log(`Message found: ${messageName}`);
         if(!context.result.messages.includes(messageName)){
         context.result.messages.push(messageName);
         }
@@ -213,7 +237,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (context) {
-    console.log("SignalHandler");
     if(context.element.eventDefinitions && context.element.eventDefinitions[0].signalRef){
         const signalName = context.element.eventDefinitions[0].signalRef.name
         console.log(`Signal found: ${signalName}`);
