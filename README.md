@@ -8,7 +8,7 @@ These constants are or will be supported:
 
 - [x] Message
 - [x] Signal
-- [ ] BPMN Error
+- [x] BPMN Error
 - [ ] Task Type (C8)
 - [ ] Task Topic (C7)
 - [ ] Delegate Java Class
