@@ -5,6 +5,7 @@ export default function (context) {
   }
   if (
     context.element.eventDefinitions &&
+    context.element.eventDefinitions[0] &&
     context.element.eventDefinitions[0].messageRef
   ) {
     messageName = context.element.eventDefinitions[0].messageRef.name;
