@@ -220,6 +220,7 @@ __webpack_require__.r(__webpack_exports__);
   }
   if (
     context.element.eventDefinitions &&
+    context.element.eventDefinitions[0] &&
     context.element.eventDefinitions[0].messageRef
   ) {
     messageName = context.element.eventDefinitions[0].messageRef.name;
@@ -231,8 +232,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 });
-
-//context.element.messageRef && context.element.messageRef.name
 
 
 /***/ }),
