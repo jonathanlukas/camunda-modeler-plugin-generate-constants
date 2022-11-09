@@ -8,13 +8,14 @@ These constants are or will be supported:
 
 - [x] Message
 - [x] Signal
-- [ ] BPMN Error
-- [ ] Task Type (C8)
-- [ ] Task Topic (C7)
-- [ ] Delegate Java Class
-- [ ] Delegate Expression
+- [x] BPMN Error
+- [x] Task Type (C8)
+- [x] Task Topic (C7)
+- [x] Delegate Java Class
+- [x] Delegate Expression
 - [ ] Bpmn Process Id / Process definition key
 - [ ] Activity Id
+- [ ] Escalation
 
 ## Supported programming languages
 
