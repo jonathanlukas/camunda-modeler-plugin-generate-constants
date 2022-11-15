@@ -15,7 +15,7 @@ These constants are or will be supported:
 - [x] Delegate Expression
 - [ ] Bpmn Process Id / Process definition key
 - [ ] Activity Id
-- [ ] Escalation
+- [x] Escalation
 
 ## Supported programming languages
 
