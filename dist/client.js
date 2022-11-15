@@ -100,6 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signalHandler.js */ "./client/bpmn-js-extension/signalHandler.js");
 /* harmony import */ var _bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bpmnErrorHandler.js */ "./client/bpmn-js-extension/bpmnErrorHandler.js");
 /* harmony import */ var _taskHandler_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./taskHandler.js */ "./client/bpmn-js-extension/taskHandler.js");
+/* harmony import */ var _escalationHandler_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./escalationHandler.js */ "./client/bpmn-js-extension/escalationHandler.js");
 /**
  * A bpmn-js service that provides the actual plug-in feature.
  *
@@ -114,8 +115,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const handlers = [
- _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__["default"], _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__["default"],_bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__["default"], _taskHandler_js__WEBPACK_IMPORTED_MODULE_3__["default"]
+ _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__["default"], _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__["default"],_bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__["default"], _taskHandler_js__WEBPACK_IMPORTED_MODULE_3__["default"], _escalationHandler_js__WEBPACK_IMPORTED_MODULE_4__["default"]
 ]
 
 function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling) {
@@ -134,6 +136,7 @@ function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling
       messages: [],
       signals:[],
       bpmnErrorCodes:[],
+      bpmnEscalationCodes:[],
       externalTaskTopics:[],
       delegateExpressions:[],
       javaClasses:[],
@@ -172,6 +175,27 @@ __webpack_require__.r(__webpack_exports__);
         console.log(`BPMN Error found: ${bpmnErrorCode}`);        
         if(!context.result.bpmnErrorCodes.includes(bpmnErrorCode)){
         context.result.bpmnErrorCodes.push(bpmnErrorCode);
+        }
+    }
+});
+
+/***/ }),
+
+/***/ "./client/bpmn-js-extension/escalationHandler.js":
+/*!*******************************************************!*\
+  !*** ./client/bpmn-js-extension/escalationHandler.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function (context) {
+    if(context.element.eventDefinitions && context.element.eventDefinitions[0] && context.element.eventDefinitions[0].escalationRef){
+        const bpmnEscalationCode = context.element.eventDefinitions[0].escalationRef.escalationCode;
+        console.log(`BPMN Escalation found: ${bpmnEscalationCode}`);        
+        if(!context.result.bpmnEscalationCodes.includes(bpmnEscalationCode)){
+        context.result.bpmnEscalationCodes.push(bpmnEscalationCode);
         }
     }
 });
