@@ -11,10 +11,11 @@ import SignalHandler from './signalHandler.js';
 import BpmnErrorHandler from './bpmnErrorHandler.js';
 import TaskHandler from './taskHandler.js';
 import EscalationHandler from './escalationHandler.js';
+import IdHandler from './idHandler.js';
 
 
 const handlers = [
- MessageHandler, SignalHandler,BpmnErrorHandler, TaskHandler, EscalationHandler
+ MessageHandler, SignalHandler,BpmnErrorHandler, TaskHandler, EscalationHandler, IdHandler
 ]
 
 export default function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling) {
