@@ -38,7 +38,10 @@ export default function ExampleBpmnJsExtension(elementRegistry, editorActions, c
       externalTaskTopics:[],
       delegateExpressions:[],
       javaClasses:[],
-      jobTypes:[]
+      jobTypes:[],
+      taskIds:[],
+      eventIds:[],
+      processIds:[]
       
     };
     var elements = elementRegistry._elements;
