@@ -1,24 +1,22 @@
 export default function (context) {
-    if(context.element.$type.match("Task")){
-        const taskId = context.element.id
-        console.log(`Task with Id: ${taskId}`);
-        if(!context.result.taskIds.includes(taskId)){
-            context.result.taskIds.push(taskId);
-            }
-    }
-    else if(context.element.$type.match("Event")){
-        const eventId = context.element.id
-        console.log(`Event Id found: ${eventId}`);
-        if(!context.result.eventIds.includes(eventId)){
-            context.result.eventIds.push(eventId);
-        }
-    }
-    else if(context.element.$type.match("Process")){
-        const processID = context.element.id
-        console.log(`Process with Id:  ${processID}`);
-        if(!context.result.processIds.includes(processID)){
-            context.result.processIds.push(processID);
-        }
-    }
-
+  // find relevant data from process element
+  const type = context.element.$type.substring(context.element.$type.indexOf(':')+1);
+  const name = context.element.name;
+  const id = context.element.id;
+  // check if type already exists
+  let names = context.result.elementIds[type];
+  if (!names) {
+    // if not, create it on results
+    context.result.elementIds[type] = {};
+    names = context.result.elementIds[type];
+  }
+  // create name to insert
+  let counter = 0;
+  let nameToInsert = name || id;
+  while (names[nameToInsert] && names[nameToInsert] !== id) {
+    nameToInsert = `${name}_${counter}`;
+    counter++;
+  }
+  // insert id to result
+  names[nameToInsert] = id;
 }
