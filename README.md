@@ -13,7 +13,7 @@ These constants are or will be supported:
 - [x] Task Topic (C7)
 - [x] Delegate Java Class
 - [x] Delegate Expression
-- [x] ID Handler (Task Ids, Process Id, Event Ids)
+- [x] ID Handler (all process elements)
 - [x] Escalation
 
 ## Supported programming languages
