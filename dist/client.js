@@ -117,49 +117,62 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const handlers = [
- _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__["default"], _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__["default"],_bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__["default"], _taskHandler_js__WEBPACK_IMPORTED_MODULE_3__["default"], _escalationHandler_js__WEBPACK_IMPORTED_MODULE_4__["default"], _idHandler_js__WEBPACK_IMPORTED_MODULE_5__["default"]
-]
+  _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  _taskHandler_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+  _escalationHandler_js__WEBPACK_IMPORTED_MODULE_4__["default"],
+  _idHandler_js__WEBPACK_IMPORTED_MODULE_5__["default"],
+];
 
-function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling) {
-
+function ExampleBpmnJsExtension(
+  elementRegistry,
+  editorActions,
+  canvas,
+  modeling
+) {
   editorActions.register({
-    "generateConstants:java": function() {
+    "generateConstants:java": function () {
       parse();
     },
-    "generateConstants:python": function() {
+    "generateConstants:python": function () {
       parse();
-    }
+    },
   });
 
   const parse = () => {
     const result = {
       messages: [],
-      signals:[],
-      bpmnErrorCodes:[],
-      bpmnEscalationCodes:[],
-      externalTaskTopics:[],
-      delegateExpressions:[],
-      javaClasses:[],
-      jobTypes:[],
-      elementIds: {}
-      
+      signals: [],
+      bpmnErrorCodes: [],
+      bpmnEscalationCodes: [],
+      externalTaskTopics: [],
+      delegateExpressions: [],
+      javaClasses: [],
+      jobTypes: [],
+      elementIds: {},
     };
     var elements = elementRegistry._elements;
-  Object.keys(elements).forEach(function(key) {
+    Object.keys(elements).forEach(function (key) {
       var businessObject = elements[key].element.businessObject;
       const context = {
         element: businessObject,
-        result: result
+        result: result,
       };
-      handlers.forEach(h => h(context));
-  });
-  console.log(result);
+      handlers.forEach((h) => h(context));
+    });
+    console.log(result);
   };
 }
 
-ExampleBpmnJsExtension.$inject = [ 'elementRegistry', 'editorActions', 'canvas', 'modeling' ];
+ExampleBpmnJsExtension.$inject = [
+  "elementRegistry",
+  "editorActions",
+  "canvas",
+  "modeling",
+];
+
 
 /***/ }),
 
