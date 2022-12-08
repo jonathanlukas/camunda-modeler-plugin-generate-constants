@@ -101,6 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bpmnErrorHandler.js */ "./client/bpmn-js-extension/bpmnErrorHandler.js");
 /* harmony import */ var _taskHandler_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./taskHandler.js */ "./client/bpmn-js-extension/taskHandler.js");
 /* harmony import */ var _escalationHandler_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./escalationHandler.js */ "./client/bpmn-js-extension/escalationHandler.js");
+/* harmony import */ var _idHandler_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./idHandler.js */ "./client/bpmn-js-extension/idHandler.js");
 /**
  * A bpmn-js service that provides the actual plug-in feature.
  *
@@ -117,46 +118,61 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const handlers = [
- _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__["default"], _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__["default"],_bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__["default"], _taskHandler_js__WEBPACK_IMPORTED_MODULE_3__["default"], _escalationHandler_js__WEBPACK_IMPORTED_MODULE_4__["default"]
-]
+  _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  _taskHandler_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+  _escalationHandler_js__WEBPACK_IMPORTED_MODULE_4__["default"],
+  _idHandler_js__WEBPACK_IMPORTED_MODULE_5__["default"],
+];
 
-function ExampleBpmnJsExtension(elementRegistry, editorActions, canvas, modeling) {
-
+function ExampleBpmnJsExtension(
+  elementRegistry,
+  editorActions,
+  canvas,
+  modeling
+) {
   editorActions.register({
-    "generateConstants:java": function() {
+    "generateConstants:java": function () {
       parse();
     },
-    "generateConstants:python": function() {
+    "generateConstants:python": function () {
       parse();
-    }
+    },
   });
 
   const parse = () => {
     const result = {
       messages: [],
-      signals:[],
-      bpmnErrorCodes:[],
-      bpmnEscalationCodes:[],
-      externalTaskTopics:[],
-      delegateExpressions:[],
-      javaClasses:[],
-      jobTypes:[]
-      
+      signals: [],
+      bpmnErrorCodes: [],
+      bpmnEscalationCodes: [],
+      externalTaskTopics: [],
+      delegateExpressions: [],
+      javaClasses: [],
+      jobTypes: [],
+      elementIds: {},
     };
     var elements = elementRegistry._elements;
-  Object.keys(elements).forEach(function(key) {
+    Object.keys(elements).forEach(function (key) {
       var businessObject = elements[key].element.businessObject;
       const context = {
         element: businessObject,
-        result: result
+        result: result,
       };
-      handlers.forEach(h => h(context));
-  });
-  console.log(result);
+      handlers.forEach((h) => h(context));
+    });
+    console.log(result);
   };
 }
 
-ExampleBpmnJsExtension.$inject = [ 'elementRegistry', 'editorActions', 'canvas', 'modeling' ];
+ExampleBpmnJsExtension.$inject = [
+  "elementRegistry",
+  "editorActions",
+  "canvas",
+  "modeling",
+];
+
 
 /***/ }),
 
@@ -199,6 +215,41 @@ __webpack_require__.r(__webpack_exports__);
         }
     }
 });
+
+/***/ }),
+
+/***/ "./client/bpmn-js-extension/idHandler.js":
+/*!***********************************************!*\
+  !*** ./client/bpmn-js-extension/idHandler.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function (context) {
+  // find relevant data from process element
+  const type = context.element.$type.substring(context.element.$type.indexOf(':')+1);
+  const name = context.element.name;
+  const id = context.element.id;
+  // check if type already exists
+  let names = context.result.elementIds[type];
+  if (!names) {
+    // if not, create it on results
+    context.result.elementIds[type] = {};
+    names = context.result.elementIds[type];
+  }
+  // create name to insert
+  let counter = 0;
+  let nameToInsert = name || id;
+  while (names[nameToInsert] && names[nameToInsert] !== id) {
+    nameToInsert = `${name}_${counter}`;
+    counter++;
+  }
+  // insert id to result
+  names[nameToInsert] = id;
+});
+
 
 /***/ }),
 
