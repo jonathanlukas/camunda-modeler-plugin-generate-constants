@@ -14,6 +14,6 @@ import ExampleBpmnJsExtension from './ExampleBpmnJsExtension';
  *
  */
 export default {
-  __init__: [ 'PLEASE_CHANGE_ME' ],
-  PLEASE_CHANGE_ME: ['type', ExampleBpmnJsExtension ]
+  __init__: [ 'GENERATE_CONSTANTS' ],
+  GENERATE_CONSTANTS: ['type', ExampleBpmnJsExtension ]
 };
