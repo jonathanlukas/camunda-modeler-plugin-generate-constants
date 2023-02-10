@@ -1,6 +1,8 @@
 export default function (context) {
   // find relevant data from process element
-  const type = context.element.$type.substring(context.element.$type.indexOf(':')+1);
+  const type = context.element.$type.substring(
+    context.element.$type.indexOf(":") + 1
+  );
   const name = context.element.name;
   const id = context.element.id;
   // check if type already exists

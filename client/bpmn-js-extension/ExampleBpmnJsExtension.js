@@ -1,17 +1,10 @@
-/**
- * A bpmn-js service that provides the actual plug-in feature.
- *
- * Checkout the bpmn-js examples to learn about its capabilities
- * and the extension points it offers:
- *
- * https://github.com/bpmn-io/bpmn-js-examples
- */
 import MessageHandler from "./messageHandler.js";
 import SignalHandler from "./signalHandler.js";
 import BpmnErrorHandler from "./bpmnErrorHandler.js";
 import TaskHandler from "./taskHandler.js";
 import EscalationHandler from "./escalationHandler.js";
 import IdHandler from "./idHandler.js";
+import JavaGenerator from "./javaGenerator.js";
 
 const handlers = [
   MessageHandler,
@@ -22,6 +15,10 @@ const handlers = [
   IdHandler,
 ];
 
+const generators = {
+  java: JavaGenerator,
+};
+
 export default function ExampleBpmnJsExtension(
   elementRegistry,
   editorActions,
@@ -30,12 +27,17 @@ export default function ExampleBpmnJsExtension(
 ) {
   editorActions.register({
     "generateConstants:java": function () {
-      parse();
+      generateConstants("java");
     },
     "generateConstants:python": function () {
-      parse();
+      generateConstants("python");
     },
   });
+
+  const generateConstants = (language) => {
+    const result = parse();
+    const generated = generators[language](result);
+  };
 
   const parse = () => {
     const result = {
@@ -59,6 +61,7 @@ export default function ExampleBpmnJsExtension(
       handlers.forEach((h) => h(context));
     });
     console.log(result);
+    return result;
   };
 }
 

@@ -1,115 +1,25 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./client/index.js");
-/******/ })
-/************************************************************************/
-/******/ ({
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
 
 /***/ "./client/bpmn-js-extension/ExampleBpmnJsExtension.js":
 /*!************************************************************!*\
   !*** ./client/bpmn-js-extension/ExampleBpmnJsExtension.js ***!
   \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ExampleBpmnJsExtension; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ExampleBpmnJsExtension)
+/* harmony export */ });
 /* harmony import */ var _messageHandler_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./messageHandler.js */ "./client/bpmn-js-extension/messageHandler.js");
 /* harmony import */ var _signalHandler_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signalHandler.js */ "./client/bpmn-js-extension/signalHandler.js");
 /* harmony import */ var _bpmnErrorHandler_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bpmnErrorHandler.js */ "./client/bpmn-js-extension/bpmnErrorHandler.js");
 /* harmony import */ var _taskHandler_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./taskHandler.js */ "./client/bpmn-js-extension/taskHandler.js");
 /* harmony import */ var _escalationHandler_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./escalationHandler.js */ "./client/bpmn-js-extension/escalationHandler.js");
 /* harmony import */ var _idHandler_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./idHandler.js */ "./client/bpmn-js-extension/idHandler.js");
-/**
- * A bpmn-js service that provides the actual plug-in feature.
- *
- * Checkout the bpmn-js examples to learn about its capabilities
- * and the extension points it offers:
- *
- * https://github.com/bpmn-io/bpmn-js-examples
- */
+/* harmony import */ var _javaGenerator_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./javaGenerator.js */ "./client/bpmn-js-extension/javaGenerator.js");
+
 
 
 
@@ -126,6 +36,10 @@ const handlers = [
   _idHandler_js__WEBPACK_IMPORTED_MODULE_5__["default"],
 ];
 
+const generators = {
+  java: _javaGenerator_js__WEBPACK_IMPORTED_MODULE_6__["default"],
+};
+
 function ExampleBpmnJsExtension(
   elementRegistry,
   editorActions,
@@ -134,12 +48,17 @@ function ExampleBpmnJsExtension(
 ) {
   editorActions.register({
     "generateConstants:java": function () {
-      parse();
+      generateConstants("java");
     },
     "generateConstants:python": function () {
-      parse();
+      generateConstants("python");
     },
   });
+
+  const generateConstants = (language) => {
+    const result = parse();
+    const generated = generators[language](result);
+  };
 
   const parse = () => {
     const result = {
@@ -163,6 +82,7 @@ function ExampleBpmnJsExtension(
       handlers.forEach((h) => h(context));
     });
     console.log(result);
+    return result;
   };
 }
 
@@ -180,20 +100,27 @@ ExampleBpmnJsExtension.$inject = [
 /*!******************************************************!*\
   !*** ./client/bpmn-js-extension/bpmnErrorHandler.js ***!
   \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (function (context) {
-    if(context.element.eventDefinitions && context.element.eventDefinitions[0] && context.element.eventDefinitions[0].errorRef){
-        const bpmnErrorCode = context.element.eventDefinitions[0].errorRef.errorCode;
-        console.log(`BPMN Error found: ${bpmnErrorCode}`);        
-        if(!context.result.bpmnErrorCodes.includes(bpmnErrorCode)){
-        context.result.bpmnErrorCodes.push(bpmnErrorCode);
-        }
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
+  if (
+    context.element.eventDefinitions &&
+    context.element.eventDefinitions[0] &&
+    context.element.eventDefinitions[0].errorRef
+  ) {
+    const bpmnErrorCode =
+      context.element.eventDefinitions[0].errorRef.errorCode;
+    console.log(`BPMN Error found: ${bpmnErrorCode}`);
+    if (!context.result.bpmnErrorCodes.includes(bpmnErrorCode)) {
+      context.result.bpmnErrorCodes.push(bpmnErrorCode);
     }
-});
+  }
+}
+
 
 /***/ }),
 
@@ -201,20 +128,27 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************!*\
   !*** ./client/bpmn-js-extension/escalationHandler.js ***!
   \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (function (context) {
-    if(context.element.eventDefinitions && context.element.eventDefinitions[0] && context.element.eventDefinitions[0].escalationRef){
-        const bpmnEscalationCode = context.element.eventDefinitions[0].escalationRef.escalationCode;
-        console.log(`BPMN Escalation found: ${bpmnEscalationCode}`);        
-        if(!context.result.bpmnEscalationCodes.includes(bpmnEscalationCode)){
-        context.result.bpmnEscalationCodes.push(bpmnEscalationCode);
-        }
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
+  if (
+    context.element.eventDefinitions &&
+    context.element.eventDefinitions[0] &&
+    context.element.eventDefinitions[0].escalationRef
+  ) {
+    const bpmnEscalationCode =
+      context.element.eventDefinitions[0].escalationRef.escalationCode;
+    console.log(`BPMN Escalation found: ${bpmnEscalationCode}`);
+    if (!context.result.bpmnEscalationCodes.includes(bpmnEscalationCode)) {
+      context.result.bpmnEscalationCodes.push(bpmnEscalationCode);
     }
-});
+  }
+}
+
 
 /***/ }),
 
@@ -222,14 +156,17 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************!*\
   !*** ./client/bpmn-js-extension/idHandler.js ***!
   \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (function (context) {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
   // find relevant data from process element
-  const type = context.element.$type.substring(context.element.$type.indexOf(':')+1);
+  const type = context.element.$type.substring(
+    context.element.$type.indexOf(":") + 1
+  );
   const name = context.element.name;
   const id = context.element.id;
   // check if type already exists
@@ -248,7 +185,7 @@ __webpack_require__.r(__webpack_exports__);
   }
   // insert id to result
   names[nameToInsert] = id;
-});
+}
 
 
 /***/ }),
@@ -257,31 +194,34 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************!*\
   !*** ./client/bpmn-js-extension/index.js ***!
   \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var _ExampleBpmnJsExtension__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleBpmnJsExtension */ "./client/bpmn-js-extension/ExampleBpmnJsExtension.js");
 
 
-/**
- * A bpmn-js module, defining all extension services and their dependencies.
- *
- * --------
- *
- * WARNING: This is an example only.
- *
- * Make sure you choose a unique name under which your extension service
- * is exposed (i.e. change PLEASE_CHANGE_ME to something unique).
- *
- * --------
- *
- */
-/* harmony default export */ __webpack_exports__["default"] = ({
-  __init__: [ 'PLEASE_CHANGE_ME' ],
-  PLEASE_CHANGE_ME: ['type', _ExampleBpmnJsExtension__WEBPACK_IMPORTED_MODULE_0__["default"] ]
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __init__: ["GENERATE_CONSTANTS"],
+  GENERATE_CONSTANTS: ["type", _ExampleBpmnJsExtension__WEBPACK_IMPORTED_MODULE_0__["default"]],
 });
+
+
+/***/ }),
+
+/***/ "./client/bpmn-js-extension/javaGenerator.js":
+/*!***************************************************!*\
+  !*** ./client/bpmn-js-extension/javaGenerator.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(result) {}
 
 
 /***/ }),
@@ -290,12 +230,13 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************!*\
   !*** ./client/bpmn-js-extension/messageHandler.js ***!
   \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (function (context) {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
   let messageName = undefined;
   if (context.element.messageRef) {
     messageName = context.element.messageRef.name;
@@ -313,7 +254,7 @@ __webpack_require__.r(__webpack_exports__);
       context.result.messages.push(messageName);
     }
   }
-});
+}
 
 
 /***/ }),
@@ -322,20 +263,26 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************!*\
   !*** ./client/bpmn-js-extension/signalHandler.js ***!
   \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (function (context) {
-    if(context.element.eventDefinitions && context.element.eventDefinitions[0] && context.element.eventDefinitions[0].signalRef){
-        const signalName = context.element.eventDefinitions[0].signalRef.name
-        console.log(`Signal found: ${signalName}`);
-        if(!context.result.signals.includes(signalName)){
-        context.result.signals.push(signalName);
-        }
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
+  if (
+    context.element.eventDefinitions &&
+    context.element.eventDefinitions[0] &&
+    context.element.eventDefinitions[0].signalRef
+  ) {
+    const signalName = context.element.eventDefinitions[0].signalRef.name;
+    console.log(`Signal found: ${signalName}`);
+    if (!context.result.signals.includes(signalName)) {
+      context.result.signals.push(signalName);
     }
-});
+  }
+}
+
 
 /***/ }),
 
@@ -343,75 +290,50 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************!*\
   !*** ./client/bpmn-js-extension/taskHandler.js ***!
   \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (function (context) {
-    if(context.element.topic){
-        const externalTaskTopic = context.element.topic
-        console.log(`External Task Topic found: ${externalTaskTopic}`);
-        if(!context.result.externalTaskTopics.includes(externalTaskTopic)){
-            context.result.externalTaskTopics.push(externalTaskTopic);
-            }
-       
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
+  if (context.element.topic) {
+    const externalTaskTopic = context.element.topic;
+    console.log(`External Task Topic found: ${externalTaskTopic}`);
+    if (!context.result.externalTaskTopics.includes(externalTaskTopic)) {
+      context.result.externalTaskTopics.push(externalTaskTopic);
     }
+  }
 
-    if(context.element.delegateExpression){
-        const delegateExpression = context.element.delegateExpression
-        console.log(`Delegate Expression found: ${delegateExpression}`);
-        if(!context.result.delegateExpressions.includes(delegateExpression)){
-            context.result.delegateExpressions.push(delegateExpression);
-        }
-        
+  if (context.element.delegateExpression) {
+    const delegateExpression = context.element.delegateExpression;
+    console.log(`Delegate Expression found: ${delegateExpression}`);
+    if (!context.result.delegateExpressions.includes(delegateExpression)) {
+      context.result.delegateExpressions.push(delegateExpression);
     }
+  }
 
-    if (context.element.class){
-        const javaClass = context.element.class;
-        console.log(`Java Class found: ${javaClass}`);
-        if(!context.result.javaClasses.includes(javaClass)){
-            context.result.javaClasses.push(javaClass);
-        }
+  if (context.element.class) {
+    const javaClass = context.element.class;
+    console.log(`Java Class found: ${javaClass}`);
+    if (!context.result.javaClasses.includes(javaClass)) {
+      context.result.javaClasses.push(javaClass);
     }
+  }
 
-    if(context.element.extensionElements && context.element.extensionElements.values && context.element.extensionElements.values[0] && context.element.extensionElements.values[0].type) {
-        const jobType = context.element.extensionElements.values[0].type;
-        console.log(`Job Type found: ${jobType}`);
-        if(!context.result.jobTypes.includes(jobType)){
-            context.result.jobTypes.push(jobType);
-        }
+  if (
+    context.element.extensionElements &&
+    context.element.extensionElements.values &&
+    context.element.extensionElements.values[0] &&
+    context.element.extensionElements.values[0].type
+  ) {
+    const jobType = context.element.extensionElements.values[0].type;
+    console.log(`Job Type found: ${jobType}`);
+    if (!context.result.jobTypes.includes(jobType)) {
+      context.result.jobTypes.push(jobType);
     }
-
-});
-
-/***/ }),
-
-/***/ "./client/index.js":
-/*!*************************!*\
-  !*** ./client/index.js ***!
-  \*************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! camunda-modeler-plugin-helpers */ "./node_modules/camunda-modeler-plugin-helpers/index.js");
-/* harmony import */ var _bpmn_js_extension__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bpmn-js-extension */ "./client/bpmn-js-extension/index.js");
-/** 
- * NOTE: This is specifically a registration of a **bpmn-js** extension. If you would like to create another type of plugin 
- * (say a client extension), the structure of the plugin and the function to register it will be slightly different.
- * 
- * Please refer to:
- * Examples plugins - https://github.com/camunda/camunda-modeler-plugins
- * Plugin documentation - https://docs.camunda.io/docs/components/modeler/desktop-modeler/plugins/
- */
-
-
-
-
-
-Object(camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__["registerBpmnJSPlugin"])(_bpmn_js_extension__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  }
+}
 
 
 /***/ }),
@@ -420,23 +342,23 @@ Object(camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__["registerBpmn
 /*!**************************************************************!*\
   !*** ./node_modules/camunda-modeler-plugin-helpers/index.js ***!
   \**************************************************************/
-/*! exports provided: registerClientPlugin, registerClientExtension, registerBpmnJSPlugin, registerPlatformBpmnJSPlugin, registerCloudBpmnJSPlugin, registerBpmnJSModdleExtension, registerPlatformBpmnJSModdleExtension, registerCloudBpmnJSModdleExtension, registerDmnJSModdleExtension, registerDmnJSPlugin, getModelerDirectory, getPluginsDirectory */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerClientPlugin", function() { return registerClientPlugin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerClientExtension", function() { return registerClientExtension; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerBpmnJSPlugin", function() { return registerBpmnJSPlugin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerPlatformBpmnJSPlugin", function() { return registerPlatformBpmnJSPlugin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerCloudBpmnJSPlugin", function() { return registerCloudBpmnJSPlugin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerBpmnJSModdleExtension", function() { return registerBpmnJSModdleExtension; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerPlatformBpmnJSModdleExtension", function() { return registerPlatformBpmnJSModdleExtension; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerCloudBpmnJSModdleExtension", function() { return registerCloudBpmnJSModdleExtension; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerDmnJSModdleExtension", function() { return registerDmnJSModdleExtension; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerDmnJSPlugin", function() { return registerDmnJSPlugin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getModelerDirectory", function() { return getModelerDirectory; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPluginsDirectory", function() { return getPluginsDirectory; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getModelerDirectory": () => (/* binding */ getModelerDirectory),
+/* harmony export */   "getPluginsDirectory": () => (/* binding */ getPluginsDirectory),
+/* harmony export */   "registerBpmnJSModdleExtension": () => (/* binding */ registerBpmnJSModdleExtension),
+/* harmony export */   "registerBpmnJSPlugin": () => (/* binding */ registerBpmnJSPlugin),
+/* harmony export */   "registerClientExtension": () => (/* binding */ registerClientExtension),
+/* harmony export */   "registerClientPlugin": () => (/* binding */ registerClientPlugin),
+/* harmony export */   "registerCloudBpmnJSModdleExtension": () => (/* binding */ registerCloudBpmnJSModdleExtension),
+/* harmony export */   "registerCloudBpmnJSPlugin": () => (/* binding */ registerCloudBpmnJSPlugin),
+/* harmony export */   "registerDmnJSModdleExtension": () => (/* binding */ registerDmnJSModdleExtension),
+/* harmony export */   "registerDmnJSPlugin": () => (/* binding */ registerDmnJSPlugin),
+/* harmony export */   "registerPlatformBpmnJSModdleExtension": () => (/* binding */ registerPlatformBpmnJSModdleExtension),
+/* harmony export */   "registerPlatformBpmnJSPlugin": () => (/* binding */ registerPlatformBpmnJSPlugin)
+/* harmony export */ });
 /**
  * Validate and register a client plugin.
  *
@@ -690,5 +612,88 @@ function getPluginsDirectory() {
 
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!*************************!*\
+  !*** ./client/index.js ***!
+  \*************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! camunda-modeler-plugin-helpers */ "./node_modules/camunda-modeler-plugin-helpers/index.js");
+/* harmony import */ var _bpmn_js_extension__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bpmn-js-extension */ "./client/bpmn-js-extension/index.js");
+/** 
+ * NOTE: This is specifically a registration of a **bpmn-js** extension. If you would like to create another type of plugin 
+ * (say a client extension), the structure of the plugin and the function to register it will be slightly different.
+ * 
+ * Please refer to:
+ * Examples plugins - https://github.com/camunda/camunda-modeler-plugins
+ * Plugin documentation - https://docs.camunda.io/docs/components/modeler/desktop-modeler/plugins/
+ */
+
+
+
+
+
+(0,camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__.registerBpmnJSPlugin)(_bpmn_js_extension__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+})();
+
+/******/ })()
+;
 //# sourceMappingURL=client.js.map
