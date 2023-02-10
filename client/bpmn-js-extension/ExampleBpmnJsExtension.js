@@ -1,11 +1,3 @@
-/**
- * A bpmn-js service that provides the actual plug-in feature.
- *
- * Checkout the bpmn-js examples to learn about its capabilities
- * and the extension points it offers:
- *
- * https://github.com/bpmn-io/bpmn-js-examples
- */
 import MessageHandler from "./messageHandler.js";
 import SignalHandler from "./signalHandler.js";
 import BpmnErrorHandler from "./bpmnErrorHandler.js";
@@ -24,7 +16,7 @@ const handlers = [
 ];
 
 const generators = {
-  "java": JavaGenerator,
+  java: JavaGenerator,
 };
 
 export default function ExampleBpmnJsExtension(

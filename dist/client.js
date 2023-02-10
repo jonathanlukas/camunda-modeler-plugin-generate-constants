@@ -19,14 +19,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _escalationHandler_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./escalationHandler.js */ "./client/bpmn-js-extension/escalationHandler.js");
 /* harmony import */ var _idHandler_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./idHandler.js */ "./client/bpmn-js-extension/idHandler.js");
 /* harmony import */ var _javaGenerator_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./javaGenerator.js */ "./client/bpmn-js-extension/javaGenerator.js");
-/**
- * A bpmn-js service that provides the actual plug-in feature.
- *
- * Checkout the bpmn-js examples to learn about its capabilities
- * and the extension points it offers:
- *
- * https://github.com/bpmn-io/bpmn-js-examples
- */
 
 
 
@@ -45,7 +37,7 @@ const handlers = [
 ];
 
 const generators = {
-  "java": _javaGenerator_js__WEBPACK_IMPORTED_MODULE_6__["default"],
+  java: _javaGenerator_js__WEBPACK_IMPORTED_MODULE_6__["default"],
 };
 
 function ExampleBpmnJsExtension(
@@ -115,14 +107,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
-    if(context.element.eventDefinitions && context.element.eventDefinitions[0] && context.element.eventDefinitions[0].errorRef){
-        const bpmnErrorCode = context.element.eventDefinitions[0].errorRef.errorCode;
-        console.log(`BPMN Error found: ${bpmnErrorCode}`);        
-        if(!context.result.bpmnErrorCodes.includes(bpmnErrorCode)){
-        context.result.bpmnErrorCodes.push(bpmnErrorCode);
-        }
+  if (
+    context.element.eventDefinitions &&
+    context.element.eventDefinitions[0] &&
+    context.element.eventDefinitions[0].errorRef
+  ) {
+    const bpmnErrorCode =
+      context.element.eventDefinitions[0].errorRef.errorCode;
+    console.log(`BPMN Error found: ${bpmnErrorCode}`);
+    if (!context.result.bpmnErrorCodes.includes(bpmnErrorCode)) {
+      context.result.bpmnErrorCodes.push(bpmnErrorCode);
     }
+  }
 }
+
 
 /***/ }),
 
@@ -137,14 +135,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
-    if(context.element.eventDefinitions && context.element.eventDefinitions[0] && context.element.eventDefinitions[0].escalationRef){
-        const bpmnEscalationCode = context.element.eventDefinitions[0].escalationRef.escalationCode;
-        console.log(`BPMN Escalation found: ${bpmnEscalationCode}`);        
-        if(!context.result.bpmnEscalationCodes.includes(bpmnEscalationCode)){
-        context.result.bpmnEscalationCodes.push(bpmnEscalationCode);
-        }
+  if (
+    context.element.eventDefinitions &&
+    context.element.eventDefinitions[0] &&
+    context.element.eventDefinitions[0].escalationRef
+  ) {
+    const bpmnEscalationCode =
+      context.element.eventDefinitions[0].escalationRef.escalationCode;
+    console.log(`BPMN Escalation found: ${bpmnEscalationCode}`);
+    if (!context.result.bpmnEscalationCodes.includes(bpmnEscalationCode)) {
+      context.result.bpmnEscalationCodes.push(bpmnEscalationCode);
     }
+  }
 }
+
 
 /***/ }),
 
@@ -160,7 +164,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
   // find relevant data from process element
-  const type = context.element.$type.substring(context.element.$type.indexOf(':')+1);
+  const type = context.element.$type.substring(
+    context.element.$type.indexOf(":") + 1
+  );
   const name = context.element.name;
   const id = context.element.id;
   // check if type already exists
@@ -197,22 +203,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ExampleBpmnJsExtension__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleBpmnJsExtension */ "./client/bpmn-js-extension/ExampleBpmnJsExtension.js");
 
 
-/**
- * A bpmn-js module, defining all extension services and their dependencies.
- *
- * --------
- *
- * WARNING: This is an example only.
- *
- * Make sure you choose a unique name under which your extension service
- * is exposed (i.e. change PLEASE_CHANGE_ME to something unique).
- *
- * --------
- *
- */
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  __init__: [ 'GENERATE_CONSTANTS' ],
-  GENERATE_CONSTANTS: ['type', _ExampleBpmnJsExtension__WEBPACK_IMPORTED_MODULE_0__["default"] ]
+  __init__: ["GENERATE_CONSTANTS"],
+  GENERATE_CONSTANTS: ["type", _ExampleBpmnJsExtension__WEBPACK_IMPORTED_MODULE_0__["default"]],
 });
 
 
@@ -228,9 +221,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(result) {
-    
-}
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(result) {}
+
 
 /***/ }),
 
@@ -278,14 +270,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
-    if(context.element.eventDefinitions && context.element.eventDefinitions[0] && context.element.eventDefinitions[0].signalRef){
-        const signalName = context.element.eventDefinitions[0].signalRef.name
-        console.log(`Signal found: ${signalName}`);
-        if(!context.result.signals.includes(signalName)){
-        context.result.signals.push(signalName);
-        }
+  if (
+    context.element.eventDefinitions &&
+    context.element.eventDefinitions[0] &&
+    context.element.eventDefinitions[0].signalRef
+  ) {
+    const signalName = context.element.eventDefinitions[0].signalRef.name;
+    console.log(`Signal found: ${signalName}`);
+    if (!context.result.signals.includes(signalName)) {
+      context.result.signals.push(signalName);
     }
+  }
 }
+
 
 /***/ }),
 
@@ -300,41 +297,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(context) {
-    if(context.element.topic){
-        const externalTaskTopic = context.element.topic
-        console.log(`External Task Topic found: ${externalTaskTopic}`);
-        if(!context.result.externalTaskTopics.includes(externalTaskTopic)){
-            context.result.externalTaskTopics.push(externalTaskTopic);
-            }
-       
+  if (context.element.topic) {
+    const externalTaskTopic = context.element.topic;
+    console.log(`External Task Topic found: ${externalTaskTopic}`);
+    if (!context.result.externalTaskTopics.includes(externalTaskTopic)) {
+      context.result.externalTaskTopics.push(externalTaskTopic);
     }
+  }
 
-    if(context.element.delegateExpression){
-        const delegateExpression = context.element.delegateExpression
-        console.log(`Delegate Expression found: ${delegateExpression}`);
-        if(!context.result.delegateExpressions.includes(delegateExpression)){
-            context.result.delegateExpressions.push(delegateExpression);
-        }
-        
+  if (context.element.delegateExpression) {
+    const delegateExpression = context.element.delegateExpression;
+    console.log(`Delegate Expression found: ${delegateExpression}`);
+    if (!context.result.delegateExpressions.includes(delegateExpression)) {
+      context.result.delegateExpressions.push(delegateExpression);
     }
+  }
 
-    if (context.element.class){
-        const javaClass = context.element.class;
-        console.log(`Java Class found: ${javaClass}`);
-        if(!context.result.javaClasses.includes(javaClass)){
-            context.result.javaClasses.push(javaClass);
-        }
+  if (context.element.class) {
+    const javaClass = context.element.class;
+    console.log(`Java Class found: ${javaClass}`);
+    if (!context.result.javaClasses.includes(javaClass)) {
+      context.result.javaClasses.push(javaClass);
     }
+  }
 
-    if(context.element.extensionElements && context.element.extensionElements.values && context.element.extensionElements.values[0] && context.element.extensionElements.values[0].type) {
-        const jobType = context.element.extensionElements.values[0].type;
-        console.log(`Job Type found: ${jobType}`);
-        if(!context.result.jobTypes.includes(jobType)){
-            context.result.jobTypes.push(jobType);
-        }
+  if (
+    context.element.extensionElements &&
+    context.element.extensionElements.values &&
+    context.element.extensionElements.values[0] &&
+    context.element.extensionElements.values[0].type
+  ) {
+    const jobType = context.element.extensionElements.values[0].type;
+    console.log(`Job Type found: ${jobType}`);
+    if (!context.result.jobTypes.includes(jobType)) {
+      context.result.jobTypes.push(jobType);
     }
-
+  }
 }
+
 
 /***/ }),
 
