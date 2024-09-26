@@ -777,6 +777,8 @@ function getPluginsDirectory() {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
 /*!*************************!*\
   !*** ./client/index.js ***!
   \*************************/
@@ -797,6 +799,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__.registerBpmnJSPlugin)(_bpmn_js_extension__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+})();
 
 /******/ })()
 ;
