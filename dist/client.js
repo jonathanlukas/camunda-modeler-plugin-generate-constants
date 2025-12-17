@@ -2,11 +2,11 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./client/bpmn-js-extension/ExampleBpmnJsExtension.js":
+/***/ "./client/bpmn-js-extension/ExampleBpmnJsExtension.js"
 /*!************************************************************!*\
   !*** ./client/bpmn-js-extension/ExampleBpmnJsExtension.js ***!
   \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -94,13 +94,13 @@ ExampleBpmnJsExtension.$inject = [
 ];
 
 
-/***/ }),
+/***/ },
 
-/***/ "./client/bpmn-js-extension/bpmnErrorHandler.js":
+/***/ "./client/bpmn-js-extension/bpmnErrorHandler.js"
 /*!******************************************************!*\
   !*** ./client/bpmn-js-extension/bpmnErrorHandler.js ***!
   \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -122,13 +122,13 @@ __webpack_require__.r(__webpack_exports__);
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./client/bpmn-js-extension/escalationHandler.js":
+/***/ "./client/bpmn-js-extension/escalationHandler.js"
 /*!*******************************************************!*\
   !*** ./client/bpmn-js-extension/escalationHandler.js ***!
   \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -150,13 +150,13 @@ __webpack_require__.r(__webpack_exports__);
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./client/bpmn-js-extension/idHandler.js":
+/***/ "./client/bpmn-js-extension/idHandler.js"
 /*!***********************************************!*\
   !*** ./client/bpmn-js-extension/idHandler.js ***!
   \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -188,13 +188,13 @@ __webpack_require__.r(__webpack_exports__);
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./client/bpmn-js-extension/index.js":
+/***/ "./client/bpmn-js-extension/index.js"
 /*!*******************************************!*\
   !*** ./client/bpmn-js-extension/index.js ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -209,13 +209,13 @@ __webpack_require__.r(__webpack_exports__);
 });
 
 
-/***/ }),
+/***/ },
 
-/***/ "./client/bpmn-js-extension/javaGenerator.js":
+/***/ "./client/bpmn-js-extension/javaGenerator.js"
 /*!***************************************************!*\
   !*** ./client/bpmn-js-extension/javaGenerator.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -224,13 +224,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(result) {}
 
 
-/***/ }),
+/***/ },
 
-/***/ "./client/bpmn-js-extension/messageHandler.js":
+/***/ "./client/bpmn-js-extension/messageHandler.js"
 /*!****************************************************!*\
   !*** ./client/bpmn-js-extension/messageHandler.js ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -257,13 +257,13 @@ __webpack_require__.r(__webpack_exports__);
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./client/bpmn-js-extension/signalHandler.js":
+/***/ "./client/bpmn-js-extension/signalHandler.js"
 /*!***************************************************!*\
   !*** ./client/bpmn-js-extension/signalHandler.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -284,13 +284,13 @@ __webpack_require__.r(__webpack_exports__);
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./client/bpmn-js-extension/taskHandler.js":
+/***/ "./client/bpmn-js-extension/taskHandler.js"
 /*!*************************************************!*\
   !*** ./client/bpmn-js-extension/taskHandler.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -336,13 +336,13 @@ __webpack_require__.r(__webpack_exports__);
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/camunda-modeler-plugin-helpers/index.js":
+/***/ "./node_modules/camunda-modeler-plugin-helpers/index.js"
 /*!**************************************************************!*\
   !*** ./node_modules/camunda-modeler-plugin-helpers/index.js ***!
   \**************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -718,7 +718,7 @@ function getPluginsDirectory() {
   return window.getPluginsDirectory();
 }
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -731,6 +731,12 @@ function getPluginsDirectory() {
 /******/ 		var cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Check if module exists (development only)
+/******/ 		if (__webpack_modules__[moduleId] === undefined) {
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
